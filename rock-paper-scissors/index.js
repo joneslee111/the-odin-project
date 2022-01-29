@@ -34,5 +34,4 @@ function playRound(playerSelection, computerSelection) {
 
 
 console.log(playerSelection); // console.logging players selection of rock
-
 console.log(playRound(playerSelection, computerSelection));
