@@ -1,9 +1,9 @@
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    let maxScore = 4;
+    // let maxScore = 4;
 
-    for (i = 0; (playerScore || computerScore) <= maxScore; i++) {
+    for (i = 1; (playerScore || computerScore) <= 4; i++) {
     // player inputs their move
         function playerSelection() {
             let playerInput = prompt('Please pick Rock, Paper, or Scissors. First to 5 wins.');
