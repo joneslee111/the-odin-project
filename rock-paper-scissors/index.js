@@ -73,6 +73,8 @@ function game() {
                 } else {
                     return "It's a tie!"
                 }
+            } else {
+                return 'Keep Playing!'
             }
         }
         console.log(endGame(playerScore, computerScore));
