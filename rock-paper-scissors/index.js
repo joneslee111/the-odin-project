@@ -66,7 +66,7 @@ function game() {
 
         // reveals winner based on score at the end of the last round
         function endGame(playerScore, computerScore) {
-            if (roundNum === 4) {
+            if (roundNum === maxRound) {
                 if (computerScore > playerScore) {
                     return 'Computer Wins'
                 } else if (playerScore > computerScore) {
