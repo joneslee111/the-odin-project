@@ -1,4 +1,3 @@
-
 function game() {
     let maxRound = 4
     let playerScore = 0;
@@ -24,10 +23,10 @@ function game() {
         let computerChoice = computerPlay();
         console.log(computerChoice);
 
-
         // game decides winner based on computers choice
         function playRound(playerChoice, computerChoice) {
             if (playerChoice === computerChoice) {
+                maxRound++
                 return 'tie'
             } else if (playerChoice === 'rock') {
                 if (computerChoice === 'paper') {
