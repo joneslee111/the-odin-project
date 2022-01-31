@@ -56,6 +56,7 @@ function game() {
                     return 'lose';
                 }
             } else {
+                maxRound++;
                 return 'Players move is not valid';
             }
         }
