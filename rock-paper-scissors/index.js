@@ -1,5 +1,5 @@
 function game() {
-  let maxRound = 4
+  let maxRound = 4;
   let playerScore = 0;
   let computerScore = 0;
 
@@ -16,20 +16,20 @@ function game() {
     console.log(playerChoice);
 
     // computer randomly selects from an array and returns the value
-    function computerPlay() {
+    function computerSelection() {
       const array = ['rock', 'paper', 'scissors'];
       let move = array[Math.floor(Math.random() * array.length)];
       return move;
     }
     
-    let computerChoice = computerPlay();
+    let computerChoice = computerSelection();
     console.log(computerChoice);
 
     // game decides winner based on computers choice
     function playRound(playerChoice, computerChoice) {
       if (playerChoice === computerChoice) {
-        maxRound++
-        return 'tie'
+        maxRound++;
+        return 'tie';
       } else if (playerChoice === 'rock') {
         if (computerChoice === 'paper') {
           computerScore++;
@@ -68,14 +68,14 @@ function game() {
     function endGame(playerScore, computerScore) {
       if (roundNum === maxRound) {
         if (computerScore > playerScore) {
-          return 'Computer Wins'
+          return 'Computer Wins';
         } else if (playerScore > computerScore) {
-          return 'Player Wins'
+          return 'Player Wins';
         } else {
-          return "It's a tie!"
+          return "It's a tie!";
         }
       } else {
-        return 'Keep Playing!'
+        return 'Keep Playing!';
       }
     }
     console.log(endGame(playerScore, computerScore));
