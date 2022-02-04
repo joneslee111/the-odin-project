@@ -1,19 +1,20 @@
-function game() {
+
   let maxRound = 4;
   let playerScore = 0;
   let computerScore = 0;
-
-  for (let roundNum = 0; roundNum <= maxRound; roundNum++) {
+  let playerChoice; 
+  
+  // for (let roundNum = 0; roundNum <= maxRound; roundNum++) {
         
     // player inputs their move
-    function playerSelection() {
-      let playerInput = prompt('Please pick Rock, Paper, or Scissors. Best of 5 rounds.');
-      let playerMove = playerInput.toLowerCase();
-      return playerMove;
-    }
+    // function playerSelection() {
+    //   let playerInput = prompt('Please pick Rock, Paper, or Scissors. Best of 5 rounds.');
+    //   let playerMove = playerInput.toLowerCase();
+    //   return playerMove;
+    // }
     
-    let playerChoice = playerSelection();
-    console.log(playerChoice);
+    // let playerChoice = playerSelection();
+    // console.log(playerChoice);
 
     // computer randomly selects from an array and returns the value
     function computerSelection() {
@@ -79,6 +80,33 @@ function game() {
       }
     }
     console.log(endGame(playerScore, computerScore));
-  }
-}
-game();
+
+
+    let buttons = document.querySelectorAll(".button");
+    
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const rock = document.querySelector('.button');
+        
+        playerChoice = rock.toLowerCase();
+        console.log(playerChoice);
+        
+        playRound(playerChoice, computerChoice);
+      })
+    })
+
+    // const rock = document.querySelector('#rock');
+
+
+    // rock.addEventListener('click', () => {
+    //   let playerSelection = rock.lastChild.toLowerCase();
+      
+    //   playRound(playerSelection, computerChoice);
+    // });
+
+  // }
+
+  
+
+
+
