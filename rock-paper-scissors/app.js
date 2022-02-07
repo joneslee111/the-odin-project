@@ -1,99 +1,102 @@
 
-  let maxRound = 4;
-  let playerScore = 0;
-  let computerScore = 0;
-  let playerChoice; 
-  
-  // for (let roundNum = 0; roundNum <= maxRound; roundNum++) {
-        
-    // player inputs their move
-    // function playerSelection() {
-    //   let playerInput = prompt('Please pick Rock, Paper, or Scissors. Best of 5 rounds.');
-    //   let playerMove = playerInput.toLowerCase();
-    //   return playerMove;
-    // }
-    
-    // let playerChoice = playerSelection();
-    // console.log(playerChoice);
+let maxRound = 4;
+let playerScore = 0;
+let computerScore = 0;
+let roundNum = 0;
+let playerChoice; 
+let computerChoice;
+let buttons = document.querySelectorAll(".button");
 
-    // computer randomly selects from an array and returns the value
-    function computerSelection() {
-      const array = ['rock', 'paper', 'scissors'];
-      let move = array[Math.floor(Math.random() * array.length)];
-      return move;
-    }
+// for each button, it listens for a click and sets the 
+// button id as the playerChoice
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // console.log(button.id);
+    // alert(button.id);
+    // const rock = document.querySelector('#rock');
     
-    let computerChoice = computerSelection();
+    playerChoice = button.id;
+    playRound(playerChoice, computerChoice);
+    
+  });
+});
+
+  // computer randomly selects from an array and returns the value
+ function computerSelection() {
+  const array = ['rock', 'paper', 'scissors'];
+  let move = array[Math.floor(Math.random() * array.length)];
+  return move;
+}
+
+
+
+  // game decides winner based on computers choice
+  function playRound(playerChoice, computerChoice) {
+    computerChoice = computerSelection();
+    console.log(playerChoice);
     console.log(computerChoice);
-
-    // game decides winner based on computers choice
-    function playRound(playerChoice, computerChoice) {
-      if (playerChoice === computerChoice) {
-        maxRound++;
-        return 'tie';
-      } else if (playerChoice === 'rock') {
-        if (computerChoice === 'paper') {
-          computerScore++;
-          return 'lose';
-        } else if (computerChoice === 'scissors') {
-          playerScore++;
-          return 'win';  
-        }
-      }  else if (playerChoice ==='paper') {
-        if (computerChoice ==='rock') {
-          playerScore++;
-          return 'win';
-        } else if (computerChoice === 'scissors') {
-          computerScore++;
-          return 'lose';
-        }
-      } else if (playerChoice === 'scissors') {
-        if (computerChoice === 'paper') {
-          playerScore++;
-          return 'win';
-        } else if (computerChoice === 'rock') {
-          computerScore++;
-          return 'lose';
-        }
-      } else {
-        maxRound++;
-        return 'Players move is not valid';
-      }
-    }
-    
-    console.log(playRound(playerChoice, computerChoice));
     console.log(playerScore);
     console.log(computerScore);
-
-    // reveals winner based on score at the end of the last round
-    function endGame(playerScore, computerScore) {
-      if (roundNum === maxRound) {
-        if (computerScore > playerScore) {
-          return 'Computer Wins';
-        } else if (playerScore > computerScore) {
-          return 'Player Wins';
-        } else {
-          return "It's a tie!";
-        }
-      } else {
-        return 'Keep Playing!';
+    if (playerChoice === computerChoice) {
+      maxRound++;
+      roundNum++;
+      return 'tie';
+    } else if (playerChoice === 'rock') {
+      if (computerChoice === 'paper') {
+        computerScore++;
+        roundNum++;
+        return 'lose';
+      } else if (computerChoice === 'scissors') {
+        playerScore++;
+        roundNum++;
+        return 'win';  
       }
+    }  else if (playerChoice ==='paper') {
+      if (computerChoice ==='rock') {
+        playerScore++;
+        roundNum++;
+        return 'win';
+      } else if (computerChoice === 'scissors') {
+        computerScore++;
+        roundNum++;
+        return 'lose';
+      }
+    } else if (playerChoice === 'scissors') {
+      if (computerChoice === 'paper') {
+        playerScore++;
+        roundNum++;
+        return 'win';
+      } else if (computerChoice === 'rock') {
+        computerScore++;
+        roundNum++;
+        return 'lose';
+      }
+    } else {
+      maxRound++;
+      roundNum++;
+      return 'Players move is not valid';
     }
-    console.log(endGame(playerScore, computerScore));
+  endGame(playerScore, computerScore);
+  }
+  
 
+  // reveals winner based on score at the end of the last round
+  function endGame(playerScore, computerScore) {
+    if (roundNum === 5) {
+      if (computerScore > playerScore) {
+        return 'Computer Wins';
+      } else if (playerScore > computerScore) {
+        return 'Player Wins';
+      } else {
+        return "It's a tie!";
+      }
+    } else {
+      return 'Keep Playing!';
+    }
+  }
 
-    let buttons = document.querySelectorAll(".button");
-    
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const rock = document.querySelector('.button');
-        
-        playerChoice = rock.toLowerCase();
-        console.log(playerChoice);
-        
-        playRound(playerChoice, computerChoice);
-      })
-    })
+   
+
 
     // const rock = document.querySelector('#rock');
 
@@ -109,4 +112,4 @@
   
 
 
-
+  //}
