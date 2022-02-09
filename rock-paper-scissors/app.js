@@ -4,16 +4,12 @@ let computerScore = 0;
 let roundNum = 0;
 let playerChoice; 
 let computerChoice;
-let buttons = document.querySelectorAll(".button");
+let buttons = document.querySelectorAll(".btn");
 
 // for each button, it listens for a click and sets the 
 // button id as the playerChoice
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
-    // console.log(button.id);
-    // alert(button.id);
-    // const rock = document.querySelector('#rock');
-    
     playerChoice = button.id;
     playRound(playerChoice, computerChoice);
   });
@@ -40,11 +36,13 @@ function playRound(playerChoice, computerChoice) {
     console.log(playerScore);
     console.log(computerScore);
     console.log('tie');
+    scoreCard();
     return 'tie';
   } else if (playerChoice === 'rock') {
     if (computerChoice === 'paper') {
       computerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('lose');
@@ -52,6 +50,7 @@ function playRound(playerChoice, computerChoice) {
     } else if (computerChoice === 'scissors') {
       playerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('win');
@@ -61,6 +60,7 @@ function playRound(playerChoice, computerChoice) {
     if (computerChoice ==='rock') {
       playerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('win');
@@ -68,6 +68,7 @@ function playRound(playerChoice, computerChoice) {
     } else if (computerChoice === 'scissors') {
       computerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('lose');
@@ -77,6 +78,7 @@ function playRound(playerChoice, computerChoice) {
     if (computerChoice === 'paper') {
       playerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('win');
@@ -84,6 +86,7 @@ function playRound(playerChoice, computerChoice) {
     } else if (computerChoice === 'rock') {
       computerScore++;
       roundNum++;
+      scoreCard();
       console.log(playerScore);
   console.log(computerScore);
       console.log('lose');
@@ -96,6 +99,11 @@ function playRound(playerChoice, computerChoice) {
   };
   endGame(playerScore, computerScore);
 
+};
+
+function scoreCard() {
+  let scoreCounter = document.querySelector('.score-counter');
+  scoreCounter.textContent = `Player ${playerScore} vs ${computerScore} Computer`;
 };
 
 
