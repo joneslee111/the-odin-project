@@ -11,12 +11,10 @@ body {
     margin: 40px 20px;
     width: 50%;
     height: 500px;;  
-    border-radius: 50px;
+    border-radius: 25px;
     background: #9e4c4c;
     box-shadow:  6px 6px 12px #7e3d3d,
                -6px -6px 12px #be5b5b;
-
-
 }
 
 .header-container {
@@ -39,7 +37,7 @@ text-align: center;
 .score-counter {
   text-align: center;
   padding: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   background: #9e4c4c;
   box-shadow: inset 6px 6px 12px #7e3d3d,
               inset -6px -6px 12px #be5b5b;
@@ -58,15 +56,14 @@ text-align: center;
     border: none;
     margin: 40px 20px;
     padding: 16px 32px;
-    /* padding: 0; */
-    border-radius: 50px;
+    border-radius: 25px;
     background: linear-gradient(145deg, #a95151, #8e4444);
     box-shadow:  6px 6px 12px #7e3d3d,
                  -6px -6px 12px #be5b5b; 
 }
 
 .btn:hover {
-    border-radius: 50px;
+    border-radius: 25px;
     background: #9e4c4c;
     box-shadow: inset 6px 6px 12px #7e3d3d,
                 inset -6px -6px 12px #be5b5b; 
@@ -75,7 +72,6 @@ text-align: center;
 .round-container {
     display: flex;
     justify-content: center;
-    
 }
 
 .outcome-container {
