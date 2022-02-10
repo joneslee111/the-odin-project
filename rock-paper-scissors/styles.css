@@ -26,17 +26,23 @@ body {
 }
 
 .header {
-
+text-align: center;
 }
 
 .score-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .score-counter {
-
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  background: #9e4c4c;
+  box-shadow: inset 6px 6px 12px #7e3d3d,
+              inset -6px -6px 12px #be5b5b;
 }
 
 .btns-container {
@@ -64,4 +70,17 @@ body {
     background: #9e4c4c;
     box-shadow: inset 6px 6px 12px #7e3d3d,
                 inset -6px -6px 12px #be5b5b; 
+}
+
+.round-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.outcome-container {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
 }
