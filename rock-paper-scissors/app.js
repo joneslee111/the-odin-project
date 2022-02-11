@@ -4,7 +4,15 @@ let roundDecision = ''
 let computerChoice;
 let computerChoiceStr = '';
 let buttons = document.querySelectorAll(".btn");
+let playerInput = prompt('What is your name?');
+let playerNameLower = playerInput.toLowerCase()
+let playerName = playerNameLower.charAt(0).toUpperCase() + playerNameLower.slice(1);
 
+const includeName = document.querySelector('.player-name');
+includeName.textContent = `${playerName} vs Computer`;
+
+
+console.log(playerName);
 // for each button, it listens for a click and sets the 
 // button id as the playerChoice
 buttons.forEach((button) => {
@@ -134,7 +142,7 @@ function endGame(playerScore, computerScore) {
     gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
   } else if (playerScore === 5) {
     console.log('Player wins!');
-    gameOutcome.textContent = 'Player wins!';
+    gameOutcome.textContent = `${playerName} wins!`;
     gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
   };  
 };
