@@ -4,14 +4,16 @@ let roundDecision = ''
 let computerChoice;
 let computerChoiceStr = '';
 let buttons = document.querySelectorAll(".btn");
+
+// below asks player for their name
+// alters the name so the first letter upper case only
 let playerInput = prompt('What is your name?');
 let playerNameLower = playerInput.toLowerCase()
 let playerName = playerNameLower.charAt(0).toUpperCase() + playerNameLower.slice(1);
-
+// includes name
 const includeName = document.querySelector('.player-name');
 includeName.textContent = `${playerName} vs Computer`;
 
-console.log(playerName);
 // for each button, it listens for a click and sets the 
 // button id as the playerChoice
 buttons.forEach((button) => {
