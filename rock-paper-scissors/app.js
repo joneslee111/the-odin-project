@@ -1,7 +1,5 @@
-let maxRound = 4;
 let playerScore = 0;
 let computerScore = 0;
-let roundNum = 0;
 let roundDecision = ''
 let computerChoice;
 let computerChoiceStr = '';
@@ -43,8 +41,6 @@ function playRound(playerChoice, computerChoice) {
   console.log(computerChoice);
   
   if (playerChoice === computerChoice) {
-    maxRound++;
-    roundNum++;
     console.log(playerScore);
     console.log(computerScore);
     console.log('tie');
@@ -55,7 +51,6 @@ function playRound(playerChoice, computerChoice) {
   } else if (playerChoice === 'rock') {
     if (computerChoice === 'paper') {
       computerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -65,7 +60,6 @@ function playRound(playerChoice, computerChoice) {
       endGame();
     } else if (computerChoice === 'scissors') {
       playerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -77,7 +71,6 @@ function playRound(playerChoice, computerChoice) {
   }  else if (playerChoice ==='paper') {
     if (computerChoice ==='rock') {
       playerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -87,7 +80,6 @@ function playRound(playerChoice, computerChoice) {
       endGame();
     } else if (computerChoice === 'scissors') {
       computerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -99,7 +91,6 @@ function playRound(playerChoice, computerChoice) {
   } else if (playerChoice === 'scissors') {
     if (computerChoice === 'paper') {
       playerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -109,7 +100,6 @@ function playRound(playerChoice, computerChoice) {
       endGame();
     } else if (computerChoice === 'rock') {
       computerScore++;
-      roundNum++;
       scoreCard();
       console.log(playerScore);
   console.log(computerScore);
@@ -120,7 +110,7 @@ function playRound(playerChoice, computerChoice) {
     };
   };
   endGame(playerScore, computerScore);
-
+  resetGame();
 };
 
 // updates the text of the score-counter div to the current score
@@ -129,16 +119,15 @@ function scoreCard() {
   scoreCounter.textContent = `${playerScore} - ${computerScore}`;
 };
 
-
 // reveals winner. First to 5
 function endGame(playerScore, computerScore) {
   const gameOutcome = document.querySelector('.round-container');
-  gameOutcome.animate([{ opacity: 0 }, { opacity: 1 }], {
-    duration: 1000,
-    fill: "forwards",
-    iterations: 1,
-    delay: 0,
-    easing: "ease-out", });
+  gameOutcome.animate([
+    { opacity: 0 }, 
+    { opacity: 1 }
+    ],
+    { duration: 1000, fill: "forwards", iterations: 1, delay: 0, easing: "ease-out"}
+    );
   if (computerScore === 5) {
     console.log('Oh no! Computer wins!');
     gameOutcome.textContent = 'Oh no! Computer wins!';
@@ -149,3 +138,28 @@ function endGame(playerScore, computerScore) {
     gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
   };  
 };
+
+// a function that removes the move chocies anbd replaces with a reset button
+// that refreshes the page to start a new game
+function resetGame() {
+  if (playerScore === 5 || computerScore === 5) {
+    const getBtnsContainer = document.querySelector('.btns-container');
+    removeChildNodes(getBtnsContainer);
+    const resetGame = document.createElement('button');
+    resetGame.classList.add('btn')
+    resetGame.textContent = 'Reset';
+    getBtnsContainer.appendChild(resetGame);
+    
+    const reset = document.querySelector('.btn');
+    reset.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }; 
+};
+
+// a function that removes all chld nodes of a selected parent
+function removeChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
