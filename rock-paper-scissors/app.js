@@ -11,7 +11,6 @@ let playerName = playerNameLower.charAt(0).toUpperCase() + playerNameLower.slice
 const includeName = document.querySelector('.player-name');
 includeName.textContent = `${playerName} vs Computer`;
 
-
 console.log(playerName);
 // for each button, it listens for a click and sets the 
 // button id as the playerChoice
