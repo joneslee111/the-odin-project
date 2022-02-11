@@ -13,6 +13,10 @@ let playerName = playerNameLower.charAt(0).toUpperCase() + playerNameLower.slice
 // includes name
 const includeName = document.querySelector('.player-name');
 includeName.textContent = `${playerName} vs Computer`;
+// if player enters an empty string, game continues with 'Player'
+if (playerInput === '') {
+  includeName.textContent = `Player vs Computer`;
+};
 
 // for each button, it listens for a click and sets the 
 // button id as the playerChoice
@@ -46,13 +50,8 @@ function roundOutcome() {
 function playRound(playerChoice, computerChoice) {
   computerChoice = computerSelection();
   computerChoiceStr = computerChoice;
-  console.log(playerChoice);
-  console.log(computerChoice);
-  
+
   if (playerChoice === computerChoice) {
-    console.log(playerScore);
-    console.log(computerScore);
-    console.log('tie');
     scoreCard();
     roundDecision = 'tie';
     roundOutcome();
@@ -61,18 +60,12 @@ function playRound(playerChoice, computerChoice) {
     if (computerChoice === 'paper') {
       computerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('lose');
       roundDecision = 'loss';
       roundOutcome();
       endGame();
     } else if (computerChoice === 'scissors') {
       playerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('win');
       roundDecision = 'win';
       roundOutcome();
       endGame();
@@ -81,18 +74,12 @@ function playRound(playerChoice, computerChoice) {
     if (computerChoice ==='rock') {
       playerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('win');
       roundDecision = 'win';
       roundOutcome();
       endGame();
     } else if (computerChoice === 'scissors') {
       computerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('lose');
       roundDecision = 'loss';
       roundOutcome();
       endGame();
@@ -101,18 +88,12 @@ function playRound(playerChoice, computerChoice) {
     if (computerChoice === 'paper') {
       playerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('win');
       roundDecision = 'win';
       roundOutcome();
       endGame();
     } else if (computerChoice === 'rock') {
       computerScore++;
       scoreCard();
-      console.log(playerScore);
-  console.log(computerScore);
-      console.log('lose');
       roundDecision = 'loss';
       roundOutcome();
       endGame();
@@ -138,13 +119,16 @@ function endGame(playerScore, computerScore) {
     { duration: 1000, fill: "forwards", iterations: 1, delay: 0, easing: "ease-out"}
     );
   if (computerScore === 5) {
-    console.log('Oh no! Computer wins!');
     gameOutcome.textContent = 'Oh no! Computer wins!';
     gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
   } else if (playerScore === 5) {
-    console.log('Player wins!');
-    gameOutcome.textContent = `${playerName} wins!`;
-    gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
+      if (playerInput === '') {
+        gameOutcome.textContent = 'Player wins!'
+        gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
+      } else {
+        gameOutcome.textContent = `${playerName} wins!`;
+        gameOutcome.setAttribute('style', 'font-size: 50px; font-weight: bold');
+      };
   };  
 };
 
@@ -170,5 +154,5 @@ function resetGame() {
 function removeChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
-  }
-}
+  };
+};
