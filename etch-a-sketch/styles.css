@@ -1,23 +1,28 @@
 body {
-
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 #container {
   /* display: flex;
   justify-content: center;
   align-content: center; */
-  width: 72%;
-
+  /* width: 72%; */
+  width: 1000px;
+  height: 1000px;
+  
 }
 
 .grid {
-    display: inline-block;
-    /* float: left; */
-    border: orangered;
-    border-style: dotted;  
-    width: 50px;
-    height: 50px; 
-    margin: 0px;
-    padding: 0px;
+  display: inline-block;
+  float: left;
+  border: 1px solid gray;
+  min-width: 60px;
+  min-height: 60px;
+  
 }
 
+.grid:hover {
+  background-color: black;
+}
