@@ -1,9 +1,12 @@
 const container = document.querySelector('#container');
-// container.textContent = 'This is a test';
-let gridCount = prompt('How many squares would you like?');
-console.log(gridCount);
 
+// Use this to ask the player how many squares
+// or provide an option of squares as buttons
+// let gridCount = prompt('How many squares would you like?');
+// console.log(gridCount);
+let gridCount = 256;
 
+createGrid();
 
 function createGrid() {
   for (let i = 0; i < gridCount; i++) {
@@ -13,7 +16,23 @@ function createGrid() {
   };
 };
 
-createGrid();
+const gridId = document.querySelector('.grid');
+
+gridId.addEventListener('mouseover', function (e) {
+  if (e.target.matches('.grid')) {
+    e.target.classList.add('active');
+  }
+});
+
+
+// const divs = document.querySelector('.grid');
+// divs.addEventListener('mouseover',
+// e => e.target.classList.add('my-colour-class')
+// );
+
+
+
+
 
 // for (let rows = 0; rows < 16; rows++) {
 //     for (let cols = 0; cols < 16; cols++) {

@@ -23,6 +23,10 @@ body {
   
 }
 
-.grid:hover {
+/* .grid:hover {
+  background-color: black;
+} */
+
+.grid.active {
   background-color: black;
 }
