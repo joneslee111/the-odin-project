@@ -18,9 +18,10 @@ function createGrid() {
 
 const gridId = document.querySelector('.grid');
 
-gridId.addEventListener('mouseover', function (e) {
+container.addEventListener('mouseover', function (e) {
   if (e.target.matches('.grid')) {
-    e.target.classList.add('active');
+    e.target.classList.add('.active');
+    e.target.style.background = 'black';
   }
 });
 

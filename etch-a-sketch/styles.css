@@ -1,8 +1,9 @@
-body {
-  /* display: flex;
+/* body {
+  display: flex;
   justify-content: center;
-  align-items: center; */
-}
+  align-items: center; 
+} */
+
 
 #container {
   /* display: flex;
@@ -16,7 +17,7 @@ body {
 
 .grid {
   display: inline-block;
-  float: left;
+  /* float: left; */
   border: 1px solid gray;
   min-width: 60px;
   min-height: 60px;
@@ -26,7 +27,3 @@ body {
 /* .grid:hover {
   background-color: black;
 } */
-
-.grid.active {
-  background-color: black;
-}
