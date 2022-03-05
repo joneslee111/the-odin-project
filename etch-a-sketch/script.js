@@ -1,7 +1,6 @@
 const container = document.querySelector('#grid-container');
 let colour = 'black'
 
-
 // this function creates a grid using gridTemplate
 function createGrid(size) {
   let squares = container.querySelectorAll('div');
@@ -23,6 +22,8 @@ for (let i = 0; i < amount; i++) {
 
 createGrid(16);
 
+// this function ensures that the user enters a number between 2 & 100
+//before creating a grid
 function changeGridSize(input) {
   if (input >= 2 && input <= 100) {
     createGrid(input);
@@ -31,12 +32,19 @@ function changeGridSize(input) {
   };
 };
 
+// this function listens to the html file for a button press, 
+// and depening on the button press it sets the colour variable
+// as that choice
+function changeColour(choice) {
+  colour = choice;
+};
+
+// this function listens to the colour variable and depending
+// on which colour has been set, it sets the background of 
+// the sqaure to that colour
 function squareColour() {
   if (colour === 'random') {
-    // colour = getRandomColor();
-    // colour 
-    this.style.backgroundColor = darkerShade();
-
+    colour = getRandomColor();
   } else if (colour === 'multi') {
     this.style.backgroundColor = getRandomColor();
   } else {
@@ -44,79 +52,21 @@ function squareColour() {
   };
 };
 
-function changeColour(choice) {
-  colour = choice;
-};
-
-function darkerShade() {
-  let test = 255;
-  let background = ''
-  for (i = 0; i < 26; i++) {
-    background = `rgb(${test}, ${test}, ${test})`;
-    test - 10;
-  }; 
-  console.log(test);
-  console.log(background);
-  return background;
-};
-
+// this function creates a random colour based on 6 of the 
+// letters/numbers in 'letters' then sets randomColour as that
+// randomised number/letters
 function getRandomColor() {
   let letters = '0123456789ABCDEF';
   let randomColour = '#';
-    for (let i = 0; i < 6; i++) {
-      randomColour += letters[Math.floor(Math.random() * 16)];
-    };
-    return randomColour; 
+  for (let i = 0; i < 6; i++) {
+    randomColour += letters[Math.floor(Math.random() * 16)];
+  };
+  return randomColour; 
 };
 
+// this function clears the grid by selecting all the divs
+// and changes the background colour to white
 function clearGrid() {
   let squares = container.querySelectorAll('div');
   squares.forEach((div) => div.style.backgroundColor = 'white');
 };
-
-// createGrid();
-
-// function createGrid() {
-//   for (let i = 0; i < gridCount; i++) {
-//       const grid = document.createElement('div');
-//       grid.classList.add('grid');
-//       container.appendChild(grid);
-//   };
-
-// };
-
-// const gridId = document.querySelector('.grid');
-
-// container.addEventListener('mouseover', function (e) {
-//   if (e.target.matches('.grid')) {
-//     e.target.classList.add('active');
-//     e.target.style.background = 'black';
-//   }
-// });
-
-
-//   let element = document.querySelectorAll('.grid');
-
-// const reset = document.querySelector('#clear');
-// let activeGrids = document.querySelector('.grid');
-// reset.addEventListener('click', function(activeGrids) {
-//   activeGrids.style.background = 'white';
-
-// });
-
-// // const divs = document.querySelector('.grid');
-// // divs.addEventListener('mouseover',
-// // e => e.target.classList.add('my-colour-class')
-// // );
-
-
-
-
-
-// // for (let rows = 0; rows < 16; rows++) {
-// //     for (let cols = 0; cols < 16; cols++) {
-// //       const grid = document.createElement('div');
-// //       grid.classList.add('grid');
-// //       container.appendChild(grid);
-// //     };
-// // };
