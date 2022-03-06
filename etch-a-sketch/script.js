@@ -1,4 +1,4 @@
-const container = document.querySelector('#grid-container');
+const container = document.querySelector('.grid-container');
 let colour = 'black'
 
 // this function creates a grid using gridTemplate

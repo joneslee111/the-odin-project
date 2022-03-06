@@ -9,24 +9,27 @@
   </head>
   <body>
     <div class='flex-container'>
-      <div class='title'>
-        <h1> Etch-a-Sketch</h1>
-      </div>
-      <div class='content'>
-        <button class='btn' onclick='changeColour("black")'>Black</button>
-        <button class='btn' onclick='changeColour("gray")'>Grey</button>
-        <button class='btn' onclick='changeColour("random")'>Random</button>
-        <button class='btn' onclick='changeColour("multi")'>Multicolour</button>
-
-        <div id="grid-container"> </div>
-        <button id='clear' class='btn' onclick='clearGrid()'> Clear </button>
-        <div>
-          <input type='text' placeholder='Size of Board' value='16' onchange='changeGridSize(this.value)' />
-          <button type="submit">Set Size</button>
+      <div class='etchpad'>
+        <p> Etch-a-Sketch</p>
+        <div class="grid-container"> </div>
+        <div class="nobs">
+          <div class="rightnob"></div>
+          <div class="leftnob"></div>
+          <div class='buttons-container'>
+            <button class='btn' onclick='changeColour("black")'>Black</button>
+            <button class='btn' onclick='changeColour("gray")'>Grey</button>
+            <button class='btn' onclick='changeColour("random")'>Random</button>
+            <button class='btn' onclick='changeColour("multi")'>Multicolour</button>
+            <button id='clear' class='btn' onclick='clearGrid()'> Clear </button>
+          </div>
         </div>
       </div>
+      <div class='clear-container'>
+        <input type='text' placeholder='Size of Board' value='16' onchange='changeGridSize(this.value)' />
+        <button type="submit">Set Size</button>
+      </div>
+    <div>
     </div>
   </body>
   <script src="script.js"></script>
-
 </html>
