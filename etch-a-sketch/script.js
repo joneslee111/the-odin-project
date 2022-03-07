@@ -11,7 +11,7 @@ function createGrid(size) {
   
   let amount = size * size;
 
-for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amount; i++) {
     let square = document.createElement('div');
     square.classList.add('grid-squares');
     square.style.backgroundColor = 'white';
