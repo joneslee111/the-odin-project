@@ -10,36 +10,34 @@
 <body>
   <div class="flex-container">
     <div class="calc-container">
-      
       <div class="calc-screen">
-        this is a test
+        <!-- <p class="calc-text"></p> -->
       </div>
       <div class="buttons-group">
         <!-- First Row -->
-        <button class="clear" id="btn"> AC </button>
-        <button class="other" id="btn"> +/-</button>
-        <button class="other" id="btn"> % </button>
-        <button class="operator" id="btn"> / </button>
+        <button type="clear" class="btn" id="clear" onclick=> AC </button>
+        <button type="other" class="btn" id="+/-"> +/-</button>
+        <button type="other" class="btn" id="%"> % </button>
+        <button type="operator" class="btn" id="/"> ÷ </button>
         <!-- Second Row -->
-        <button class="number" id="btn"> 7 </button>
-        <button class="number" id="btn"> 8 </button>
-        <button class="number" id="btn"> 9 </button>
-        <button  class="operator" id="btn"> X </button>
+        <button type="number" class="btn" id="7" onclick='whichButton(7)'> 7 </button>
+        <button type="number" class="btn" id="8" onclick='whichButton(8)'> 8 </button>
+        <button type="number" class="btn" id="9" onclick='whichButton(9)'> 9 </button>
+        <button type="operator" class="btn" id="x"> x </button>
         <!-- Third Row -->
-        <button class="number" id="btn"> 4 </button>
-        <button class="number" id="btn"> 5 </button>
-        <button class="number" id="btn"> 6 </button>
-        <button  class="operator" id="btn"> - </button>
+        <button type="number" class="btn" id="4" onclick='whichButton(4)'> 4 </button>
+        <button type="number" class="btn" id="5" onclick='whichButton(5)'> 5 </button>
+        <button type="number" class="btn" id="6" onclick='whichButton(6)'> 6 </button>
+        <button type="operator" class="btn" id="-"> - </button>
         <!-- Fourth Row -->
-        <button class="number" id="btn"> 1 </button>
-        <button class="number" id="btn"> 2 </button>
-        <button class="number" id="btn"> 3 </button>
-        <button class="operator" id="btn"> + </button>
+        <button type="number" class="btn" id="1" onclick='whichButton(1)'> 1 </button>
+        <button type="number" class="btn" id="2" onclick='whichButton(2)'> 2 </button>
+        <button type="number" class="btn" id="3" onclick='whichButton(3)'> 3 </button>
+        <button type="operator" class="btn" id="+"> + </button>
         <!-- Fifth Row -->
-        <button class="number" id="wide" > 0 </button>
-        <button class="other" id="btn"> . </button>
-        <button class="operator" id="btn"></buttonclass> = </button>
-
+        <button type="number" class="btn wide" id="0" onclick='whichButton(0)'> 0 </button>
+        <button type="other" class="btn" id="."> . </button>
+        <button type="operator" class="btn" id="="> = </button>
       </div>
     </div>
   </div>

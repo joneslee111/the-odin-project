@@ -25,4 +25,27 @@ function operate(operator, a, b) {
     return divide(a, b);
   };
 };
+let display = 0;
 
+let buttonSelect = document.querySelectorAll('.btn');
+buttonSelect.forEach((btn) => {
+  btn.addEventListener('click', whichButton)
+});
+
+function whichButton(button) {
+  display += button;
+  // console.log(display);
+  populateDisplay(display);
+};
+
+// populate display
+function populateDisplay(display) {
+  let screenContainer = document.querySelector('.calc-screen');
+  // let screenText = screenContainer.querySelector('.calc-text');
+  screenContainer.textContent = display;
+  // console.log(display);
+
+}
+
+
+// console.log(display);

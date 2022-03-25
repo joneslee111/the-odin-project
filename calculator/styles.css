@@ -26,6 +26,11 @@ body {
   border: solid;
   height: 70px;
   margin: 20px;
+  padding: 0; 
+}
+
+.calc-text {
+  padding: 20px;
 }
 
 .buttons-group {
@@ -37,13 +42,14 @@ body {
   
 }
 
-#btn {
+.btn {
   border-radius: 50px;
   padding: 20px;
   font-size: 20px;
 }
 
-#wide {
+.wide {
   grid-column: span 2;
   border-radius: 50px;
+  font-size: 20px;
 }
