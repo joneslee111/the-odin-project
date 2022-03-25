@@ -1,0 +1,35 @@
+body {
+
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+}
+
+.calc-container {
+  display: flex;
+  align-items: center;
+  border: solid;
+  width: 300px;
+  height: 400px;
+  flex-direction: column;
+}
+
+.calc-screen {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%;
+  border: solid;
+  height: 70px;
+  margin: 20px;
+}
+
+.buttons-group {
+  border: solid;
+  width: 90%;
+  height: auto;
+}
