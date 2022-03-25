@@ -25,3 +25,4 @@ function operate(operator, a, b) {
     return divide(a, b);
   };
 };
+
