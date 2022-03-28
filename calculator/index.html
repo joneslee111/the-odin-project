@@ -15,29 +15,29 @@
       </div>
       <div class="buttons-group">
         <!-- First Row -->
-        <button type="clear" class="btn" id="clear" onclick=> AC </button>
+        <button type="clear" class="btn" id="clear"> AC </button>
         <button type="other" class="btn" id="+/-"> +/-</button>
         <button type="other" class="btn" id="%"> % </button>
-        <button type="operator" class="btn" id="/"> ÷ </button>
+        <button type="operator" class="btn" id="/" onclick='whichOperator("/")'> ÷ </button>
         <!-- Second Row -->
         <button type="number" class="btn" id="7" onclick='whichButton(7)'> 7 </button>
         <button type="number" class="btn" id="8" onclick='whichButton(8)'> 8 </button>
         <button type="number" class="btn" id="9" onclick='whichButton(9)'> 9 </button>
-        <button type="operator" class="btn" id="x"> x </button>
+        <button type="operator" class="btn" id="x" onclick='whichOperator("x")'> x </button>
         <!-- Third Row -->
         <button type="number" class="btn" id="4" onclick='whichButton(4)'> 4 </button>
         <button type="number" class="btn" id="5" onclick='whichButton(5)'> 5 </button>
         <button type="number" class="btn" id="6" onclick='whichButton(6)'> 6 </button>
-        <button type="operator" class="btn" id="-"> - </button>
+        <button type="operator" class="btn" id="-" onclick='whichOperator("-")'> - </button>
         <!-- Fourth Row -->
         <button type="number" class="btn" id="1" onclick='whichButton(1)'> 1 </button>
         <button type="number" class="btn" id="2" onclick='whichButton(2)'> 2 </button>
         <button type="number" class="btn" id="3" onclick='whichButton(3)'> 3 </button>
-        <button type="operator" class="btn" id="+"> + </button>
+        <button type="operator" class="btn" id="+" onclick='whichOperator("+")'> + </button>
         <!-- Fifth Row -->
         <button type="number" class="btn wide" id="0" onclick='whichButton(0)'> 0 </button>
         <button type="other" class="btn" id="."> . </button>
-        <button type="operator" class="btn" id="="> = </button>
+        <button type="operator" class="btn" id="=" onclick='solution()'> = </button>
       </div>
     </div>
   </div>
