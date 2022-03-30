@@ -1,6 +1,9 @@
 function add(a, b) {
+  let c = parseInt(a, 10);
+  let d = parseInt(b, 10);
   console.log(a + b);
-  answer = a + b;
+  answer = c + d;
+  console.log(answer);
 };
 
 function subtract(a, b) {
@@ -29,8 +32,8 @@ function operate(operator, a, b) {
     return divide(a, b);
   };
 };
-let a = [];
-let b = [];
+let a = '';
+let b = '';
 let operator = '';
 let answer = 0;
 
