@@ -1,24 +1,60 @@
+let a = '';
+let b = '';
+let operator = '';
+let answer = 0;
+const buttonSelect = document.querySelector('.btn');
+const screenContainer = document.querySelector('.calc-screen');
+
+
 function add(a, b) {
-  let c = parseInt(a, 10);
-  let d = parseInt(b, 10);
-  console.log(a + b);
-  answer = c + d;
-  console.log(answer);
+  let parseA = parseInt(a, 10);
+  let parseB = parseInt(b, 10); 
+  if (answer === 0) {
+    answer = parseA + parseB;
+    console.log(answer);
+  } else {
+    answer = answer + parseB;
+    console.log(answer);
+
+    return answer;
+  }
 };
 
 function subtract(a, b) {
-  console.log(a-b);
-  return a - b;
+  let parseA = parseInt(a, 10);
+  let parseB = parseInt(b, 10); 
+  if (answer === 0) {
+    answer = parseA - parseB;
+    console.log(answer);
+  } else {
+    b = '';
+    answer = answer - parseB;
+    console.log(answer);
+  };
 };
 
 function multiply(a, b) {
-  console.log(a*b);
-  return a * b;
+  let parseA = parseInt(a, 10);
+  let parseB = parseInt(b, 10); 
+  if (answer === 0) {
+    answer = parseA * parseB;
+    console.log(answer);
+  } else {
+    answer = answer * parseB;
+    console.log(answer);
+  }
 };
 
 function divide(a, b) {
-  console.log(a/b);
-  return a / b;
+  let parseA = parseInt(a, 10);
+  let parseB = parseInt(b, 10); 
+  if (answer === 0) {
+    answer = parseA / parseB;
+    console.log(answer);
+  } else {
+    answer = answer / parseB;
+    console.log(answer);
+  }
 }
 
 function operate(operator, a, b) {
@@ -32,14 +68,9 @@ function operate(operator, a, b) {
     return divide(a, b);
   };
 };
-let a = '';
-let b = '';
-let operator = '';
-let answer = 0;
 
 // listens for button presses for the numbers 
 // and calls whichButton function
-let buttonSelect = document.querySelector('.btn');
 // buttonSelect.addEventListener('click', whichButton);
 // let buttonSelect = document.querySelectorAll('.btn');
 // for (let i = 0; i < buttonSelect.length; i++) {
@@ -50,9 +81,8 @@ let buttonSelect = document.querySelector('.btn');
 // pass the value of the button thats pressed to the display array
 // then calls populateDisplay, whilst passing the display arr
 function whichButton(button) {
-  let screenContainer = document.querySelector('.calc-screen');
-
-  if (operator == '+' ) {
+  if ((operator == '+' ) || (operator == '-') | 
+  (operator == '/' ) || (operator == 'x')) {
     screenContainer.textContent = '';
     b += button;
     screenContainer.textContent = b;
@@ -62,34 +92,25 @@ function whichButton(button) {
   }
     console.log(a);
     console.log(b);
-  // populateDisplay(a, b);
 };
 
-// takes in the display arg and does some dom manipulation
-// selects the calc-screen class and ands the display value as text
-// function populateDisplay(a, b) {
-//   let screenContainer = document.querySelector('.calc-screen');
-//   screenContainer.textContent = a;
-
-// };
-
-// 
 function whichOperator(button) {
-  // let a = 5;
-  // let b = 5;
   operator = button;
-
 }
 
 function solution() {
   if (operator === '/') {
-    operate(divide, 5, 5);
+    operate(divide, a, b);
+    b = '';
   } else if (operator === 'x') {
-    operate(multiply, 5, 5);
+    operate(multiply, a, b);
+    b = '';
   } else if (operator === '-') {
-    operate(subtract, 5, 5);
+    operate(subtract, a, b);
+    b = '';
   } else if (operator === '+') {
     operate(add, a, b);
+    b = '';
   };
 // console.log(operator);
 }
