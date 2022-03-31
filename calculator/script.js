@@ -7,8 +7,8 @@ const screenContainer = document.querySelector('.calc-screen');
 
 
 function add(a, b) {
-  let parseA = parseInt(a, 10);
-  let parseB = parseInt(b, 10); 
+  let parseA = parseFloat(a, 10);
+  let parseB = parseFloat(b, 10); 
   if (answer === 0) {
     answer = parseA + parseB;
     console.log(answer);
@@ -21,8 +21,8 @@ function add(a, b) {
 };
 
 function subtract(a, b) {
-  let parseA = parseInt(a, 10);
-  let parseB = parseInt(b, 10); 
+  let parseA = parseFloat(a, 10);
+  let parseB = parseFloat(b, 10); 
   if (answer === 0) {
     answer = parseA - parseB;
     console.log(answer);
@@ -34,8 +34,8 @@ function subtract(a, b) {
 };
 
 function multiply(a, b) {
-  let parseA = parseInt(a, 10);
-  let parseB = parseInt(b, 10); 
+  let parseA = parseFloat(a, 10);
+  let parseB = parseFloat(b, 10); 
   if (answer === 0) {
     answer = parseA * parseB;
     console.log(answer);
@@ -46,8 +46,8 @@ function multiply(a, b) {
 };
 
 function divide(a, b) {
-  let parseA = parseInt(a, 10);
-  let parseB = parseInt(b, 10); 
+  let parseA = parseFloat(a, 10);
+  let parseB = parseFloat(b, 10); 
   if (answer === 0) {
     answer = parseA / parseB;
     console.log(answer);
