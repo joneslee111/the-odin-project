@@ -91,11 +91,12 @@ function whichButton(button) {
     screenContainer.textContent = a;
   }
     console.log(a);
+    console.log(operator);
     console.log(b);
 };
 
 function whichOperator(button) {
-  operator = button;
+  operator = button; 
 }
 
 function solution() {
@@ -112,5 +113,16 @@ function solution() {
     operate(add, a, b);
     b = '';
   };
+  screenContainer.textContent = answer;
 // console.log(operator);
+}
+
+
+// when AC is pressed, it resets all buttons pressed
+function clearCalculator() {
+  screenContainer.textContent = '';
+  a = '';
+  b = '';
+  operator = '';
+  answer = 0;
 }
