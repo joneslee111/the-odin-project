@@ -12,10 +12,13 @@ function add(a, b) {
   if (answer === 0) {
     answer = parseA + parseB;
     console.log(answer);
+    console.log(parseA);
+    console.log(parseB); 
   } else {
+    console.log(parseA);
+    console.log(parseB);
     answer = answer + parseB;
     console.log(answer);
-
     return answer;
   }
 };
@@ -27,7 +30,6 @@ function subtract(a, b) {
     answer = parseA - parseB;
     console.log(answer);
   } else {
-    b = '';
     answer = answer - parseB;
     console.log(answer);
   };
@@ -69,15 +71,6 @@ function operate(operator, a, b) {
   };
 };
 
-// listens for button presses for the numbers 
-// and calls whichButton function
-// buttonSelect.addEventListener('click', whichButton);
-// let buttonSelect = document.querySelectorAll('.btn');
-// for (let i = 0; i < buttonSelect.length; i++) {
-//   buttonSelect[i].addEventListener('click', whichButton);
-// };
-
-
 // pass the value of the button thats pressed to the display array
 // then calls populateDisplay, whilst passing the display arr
 function whichButton(button) {
@@ -90,6 +83,7 @@ function whichButton(button) {
     a += button;
     screenContainer.textContent = a;
   }
+
     console.log(a);
     console.log(operator);
     console.log(b);
@@ -103,15 +97,19 @@ function solution() {
   if (operator === '/') {
     operate(divide, a, b);
     b = '';
+    a = answer;
   } else if (operator === 'x') {
     operate(multiply, a, b);
     b = '';
+    a = answer;
   } else if (operator === '-') {
     operate(subtract, a, b);
     b = '';
+    a = answer;
   } else if (operator === '+') {
     operate(add, a, b);
     b = '';
+    a = answer;
   };
   screenContainer.textContent = answer;
 // console.log(operator);
