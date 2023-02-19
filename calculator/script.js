@@ -83,38 +83,37 @@ function whichButton(button) {
     a += button;
     screenContainer.textContent = a;
   }
-
     console.log(a);
     console.log(operator);
     console.log(b);
 };
 
 function whichOperator(button) {
+  solution();
   operator = button; 
 }
 
 function solution() {
-  if (operator === '/') {
+  if (operator === '/' && b != '') {
     operate(divide, a, b);
-    b = '';
     a = answer;
-  } else if (operator === 'x') {
+    b = '';
+  } else if (operator === 'x' && b != '') {
     operate(multiply, a, b);
-    b = '';
     a = answer;
-  } else if (operator === '-') {
+    b = '';
+  } else if (operator === '-' && b != '') {
     operate(subtract, a, b);
-    b = '';
     a = answer;
-  } else if (operator === '+') {
+    b = '';
+  } else if (operator === '+' && b != '') {
     operate(add, a, b);
-    b = '';
     a = answer;
+    b = '';
   };
   screenContainer.textContent = answer;
 // console.log(operator);
 }
-
 
 // when AC is pressed, it resets all buttons pressed
 function clearCalculator() {
