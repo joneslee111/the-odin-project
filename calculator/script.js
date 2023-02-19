@@ -5,7 +5,6 @@ let answer = 0;
 const buttonSelect = document.querySelector('.btn');
 const screenContainer = document.querySelector('.calc-screen');
 
-
 function add(a, b) {
   let parseA = parseFloat(a, 10);
   let parseB = parseFloat(b, 10); 

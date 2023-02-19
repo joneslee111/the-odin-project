@@ -1,7 +1,6 @@
 body {
 }
 
-
 .flex-container {
   display: flex;
   justify-content: center;
@@ -40,7 +39,6 @@ body {
   grid-gap: 10px;
   /* border: solid; */
   width: 90%;
-  
 }
 
 .btn {
