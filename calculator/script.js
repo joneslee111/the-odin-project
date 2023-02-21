@@ -97,20 +97,28 @@ function solution() {
     operate(divide, a, b);
     a = answer;
     b = '';
+    screenContainer.textContent = answer;
+
   } else if (operator === 'x' && b != '') {
     operate(multiply, a, b);
     a = answer;
     b = '';
+    screenContainer.textContent = answer;
+
   } else if (operator === '-' && b != '') {
     operate(subtract, a, b);
     a = answer;
     b = '';
+    screenContainer.textContent = answer;
+
   } else if (operator === '+' && b != '') {
     operate(add, a, b);
     a = answer;
     b = '';
+    screenContainer.textContent = answer;
+
   };
-  screenContainer.textContent = answer;
+  // screenContainer.textContent = answer;
 // console.log(operator);
 }
 
